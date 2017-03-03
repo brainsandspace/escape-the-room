@@ -1,0 +1,11 @@
+{
+  "name": "escape_my_room",
+  "version": "1.0.0",
+  "description": "Future Joe travels back in time to warn the present Joe birthday boy when an time travelling interloper\"",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}

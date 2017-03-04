@@ -1,4 +1,4 @@
-<DOCTYPE html>
+<!DOCTYPE html>
   <html>
     <head></head>
 
@@ -12,10 +12,10 @@
         justify-content: center;
         align-items: center;
       }
-      .overlay, .overlay-2 {
+      iframe, .overlay, .overlay-2 {
         position: fixed;
         width: 100vw;
-        height: 100vh;
+        /*height: 100vh;*/
         /*background: rgba(0,0,0,0.7);*/
         display: flex;
         flex-direction: row;
@@ -31,6 +31,8 @@
       video {
         position: fixed;
         width: 100vw;
+        /*display: none;*/
+        opacity: 0;
       }
 
       </style>
@@ -38,11 +40,26 @@
         <!-- DUCT TAPE ON ALWAYS, the other ones flash on -->
         <!-- TODO try playing with using the videos as textures in some funky shaders-->
         <!-- TODO try doing some 3D stuff (in threeJS) with stuff on like different planes for instance -->
-        <!-- TODO edit/trim the clips -->
-        <div class="overlay"><h1>DRINK</h1></div>
-        <video loop autoplay src="./videos/wall.mp4" controls></video>
-        <video loop class="overlay" autoplay src="./videos/drank.mp4" controls></video>
+
+        <!-- option 1: embedded iframes serving up youtube content
+                cons: can't use videos as textures
+                pros: don't have to host my own videos
+          -->
+        <!--<iframe width="640" height="360" src="https://www.youtube.com/embed/ffz_8pVpiXQ?autoplay=1&modest-branding=1&showinfo=0&loop=1&controls=0&playlist=ffz_8pVpiXQ" frameborder="0" allowfullscreen></iframe>
+        <iframe class="overlay" width="640" height="360" src="https://www.youtube.com/embed/?listType=playlist&list=PLXZlTP2NSHTsiE4jt2gtA-Y__XC7LFtEc&autoplay=1&playlist=BEu-O5WJBDw&modest-branding=1&showinfo=0&loop=1&controls=0" frameborder="0" allowfullscreen></iframe>-->
+        
+        
+        <!--<div class="overlay"><h1>DRINK</h1></div>-->
+        <!--<video loop autoplay src="./videos/strugglin.mp4"></video>-->
+        <video id="struggle" loop autoplay src="./videos/strugglin.webm"></video>
+        <video id="drank-creep" loop class="overlay" autoplay src="./videos/drankin-creepin.webm"></video>
+        <audio loop autoplay src="./audio/crying.webm"></audio>
+        <!--<video loop class="overlay" autoplay src="./videos/drankin-creepin.mp4"></video>-->
         <!--<video loop class="overlay-2" autoplay src="./videos/kidnapper.mp4" controls></video></div>-->
+        <!--<iframe class="overlay" width="640" height="360" src="https://www.youtube.com/embed/BEu-O5WJBDw?autoplay=1&playlist=BEu-O5WJBDw&modest-branding=1&showinfo=0&loop=1&controls=0" frameborder="0" allowfullscreen></iframe>-->
+        <!--<iframe width="560" height="315" src="https://www.youtube.com/embed/videoseries?list=PLXZlTP2NSHTsiE4jt2gtA-Y__XC7LFtEc" frameborder="0" allowfullscreen></iframe>-->
+        <!--<iframe class="overlay-2" width="640" height="360" src="https://www.youtube.com/embed/UmFH7s2fGng?autoplay=1&modest-branding=1&showinfo=0&loop=1&controls=0" frameborder="0" allowfullscreen></iframe>-->
+        
 
       <script>
         // const allVideo = document.querySelectorAll('')
@@ -65,5 +82,8 @@
         //   }, 100)
         // }, 41 * 4);
       </script>
+
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/84/three.min.js"></script>
+      <script src="client.bundle.js"></script>
     </body>
   </html>
